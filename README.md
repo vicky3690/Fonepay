@@ -1,4 +1,4 @@
-fonepay
+Fonepay
 
 Install Requirements (on Linux)
 
