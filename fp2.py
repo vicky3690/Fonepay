@@ -49,7 +49,7 @@ while file:
 			response_data = response.read()
 			
                         print('Your password is : ',passw)
-				break
+		
 	except:
 		print('\nSleeping for time : 0 min\n')
 		time.sleep(00)
