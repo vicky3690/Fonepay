@@ -43,7 +43,7 @@ while True:
         if response.code == 200:
             browser.select_form(nr=0)
             browser.form['Mobile Number'] = MobileNumber
-            browser.form['MPIN'] = passw
+            browser.form['Password/MPIN'] = passw
             response = browser.submit()
             response_data = response.read()
             print(response_data.decode('utf-8'))
