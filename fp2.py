@@ -24,7 +24,7 @@ except:
 	print('\n\tPlease install mechanize.\n')
 	sys.exit()
 
-print('\n---------- Welcome To Fonepay ----------\n')
+print('\n---------- Welcome Vicky ----------\n')
 file=open('passwords.txt','r')
 
 number=str(raw_input('number : ').strip())
