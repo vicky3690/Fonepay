@@ -1,17 +1,17 @@
 import time
 import sys
+import subprocess
 
-if sys.version_info[0] != 2:
+if sys.version_info[0] != 3:
     print('''--------------------------------------
-    REQUIRED PYTHON 2.x
+    REQUIRED PYTHON 3.x
     use: python fp2.py
 --------------------------------------
         ''')
     sys.exit()
 
 package_name = "com.f1soft.esewa"
-import subprocess
-command = ["adb", "shell", "am", "start", "-n", "com.f1soft.esewa/.MainActivity"]
+command = ["termux-open", "-n", package_name]
 completed_process = subprocess.run(command, check=True)
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
