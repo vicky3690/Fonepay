@@ -2,7 +2,7 @@ import time
 import sys
 import subprocess
 
-if sys.version_info[0] != 3:
+if sys.version_info[0] != 2:
     print('''--------------------------------------
     REQUIRED PYTHON 2.x
     use: python fp2.py
@@ -29,7 +29,7 @@ browser.set_handle_robots(False)
 print('\n----------Welcome|VICKY----------\n')
 file = open('passwords.txt', 'r')
 
-MobileNumber = input('Mobile Number : ').strip()
+MobileNumber = input('Mobile Number : ').strip()  # Use input() instead of raw_input() in Python 3
 
 print("\nTarget Mobile Number : ", MobileNumber)
 print("\nTrying Passwords from list ...")
