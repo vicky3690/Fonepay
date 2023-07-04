@@ -11,7 +11,7 @@ if sys.version_info[0] != 3:
     sys.exit()
 
 package_name = "com.f1soft.esewa"
-command = ["termux-open", "-n", package_name]
+command = ["am", "start", "-n", package_name + "/.MainActivity"]
 completed_process = subprocess.run(command, check=True)
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
