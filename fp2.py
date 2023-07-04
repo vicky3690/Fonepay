@@ -10,7 +10,6 @@ if sys.version_info[0] != 2:
     sys.exit()
 
 package_name = "com.f1soft.esewa"
-
 import subprocess
 command = ["adb", "shell", "am", "start", "-n", "com.f1soft.esewa/.MainActivity"]
 completed_process = subprocess.run(command, check=True)
