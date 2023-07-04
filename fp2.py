@@ -30,7 +30,7 @@ browser.set_handle_robots(False)
 print('\n----------Welcome|VICKY----------\n')
 file = open('passwords.txt', 'r')
 
-MobileNumber = raw_input('Mobile Number : ').strip()  # Use input() instead of raw_input() in Python 3
+MobileNumber = raw_input('Mobile Number : ').strip()
 
 print("\nTarget Mobile Number : ", MobileNumber)
 print("\nTrying Passwords from list ...")
