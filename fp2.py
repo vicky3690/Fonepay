@@ -33,7 +33,7 @@ while True:
     response = open(d(resourceId="com.esewa.android:id/toolbar_login/register")).click()
     try:
         if response.code == 200:
-            select_form(nr=0)
+            select_form (login_form)
             .form['MobileNumber'] = MobileNumber
             .form['mpin'] = passw
             response = .submit()
