@@ -1,10 +1,10 @@
 Fonepay
 
-Install Requirements (on Linux)
+****Install Requirements (on Linux)****
 
 apt-get install git python3 python3- pip python python-pip
 
-Run commands one by one
+****Run commands one by one****
 
 git clone https://github.com/vicky3690/Fonepay
 
