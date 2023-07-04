@@ -12,7 +12,7 @@ python3 -m pip install requests bs4
 
 python3 -m pip install mechanize
 
-python3 fb.py or python fb2.py
+python3 fp.py or python fp2.py
 
 
 ~~~ !!! Welcome Dear *Vicky* To Your Cypher World !!! ~~~
