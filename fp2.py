@@ -26,7 +26,7 @@ except ImportError:
     print('\nPlease install mechanize.\n')
     sys.exit()
 
-print('\n----------Welcome|Vicky----------\n')
+print('\n----------Welcome|VICKY----------\n')
 file = open('passwords.txt', 'r')
 
 MobileNumber = str(raw_input('Mobile Number : ').strip())
