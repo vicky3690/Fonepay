@@ -1,4 +1,4 @@
-$Fonepay+++++-----v1.1.3 coded-by : ***vicky***------
+$Fonepay-----v1.1.3 codedby : ***vicky***------
 
 ****Install Requirements (on Linux)****
 
