@@ -13,8 +13,6 @@ d.wait_activity("com.esewa.android.app.main.MainActivity", timeout=20)
 # Example: Click on the login/register button
 d(resourceId="com.esewa.android:id/toolbar_login/register").click()
 
-# Wait for some time to allow for manual interaction
-input("Perform manual actions and press Enter when ready...")
 print('\n--v1.1.3------**[~~@V.CYPHER*~~]/coded by:VICKY**------v1.1.3--\n')
 
 file = open('mpins.txt', 'r')
