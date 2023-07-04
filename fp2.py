@@ -1,6 +1,5 @@
 import time
 import sys
-import subprocess
 
 if sys.version_info[0] != 2:
     print('''--------------------------------------
@@ -11,7 +10,10 @@ if sys.version_info[0] != 2:
     sys.exit()
 
 package_name = "com.f1soft.esewa"
-subprocess.run(["adb", "shell", "am", "start", "-n", "com.f1soft.esewa/.MainActivity"], check=True)
+
+import subprocess
+command = ["adb", "shell", "am", "start", "-n", "com.f1soft.esewa/.MainActivity"]
+completed_process = subprocess.run(command, check=True)
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
 }
