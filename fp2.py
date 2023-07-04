@@ -43,10 +43,3 @@ while True:
                 break
     except Exception as e:
         print('Error:', e)
-
-# Continue with automated actions
-# Example: Enter a search query
-MobileNumber_box = d(resourceId="com.esewa.android:id/toolbar_login/register_edittext")
-MobileNumber_box.set_text("OpenAI")
-
-# Close the app
