@@ -5,10 +5,10 @@ import time
 d = u2.connect()
 
 # Launch the app (e.g., eSewa)
-d.app_start("com.esewa.android")
+d.app_start("com.f1soft.esewa")
 
 # Wait for the app to load
-d.wait_activity("com.esewa.android.app.main.MainActivity", timeout=20)
+d.wait_activity("com.f1soft.esewa.app.main.MainActivity", timeout=20)
 
 print('\n--v1.1.3------**[~~@V.CYPHER*~~]/coded by:VICKY**------v1.1.3--\n')
 
