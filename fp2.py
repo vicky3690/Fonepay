@@ -1,6 +1,4 @@
 import uiautomator2 as u2
-import time
-
 # Connect to the device
 d = u2.connect()
 
