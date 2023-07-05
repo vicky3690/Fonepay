@@ -36,7 +36,9 @@ while True:
             response = d.submit()
             response_data = response.read()
             if 'response_data' in response_data:
-                print('Your MPIN is:', passw)
-                break
-    except Exception as e:
-        print('Error:', e)
+    decoded_response = response_data.decode('utf-8')  # Decoding response_data assuming it's encoded in UTF-8
+    print('Your MPIN is:', passw)
+    print('Response Data:', decoded_response)
+    break
+except Exception as e:
+    print('Error:', e)
