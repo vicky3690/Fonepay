@@ -12,7 +12,6 @@ d.wait_activity("com.f1soft.esewa.app.main.MainActivity", timeout=20)
 d(resourceID="com.f1soft.esewa:id/toolbar_login/register").click()
 
 print('\n--v1.1.3------**[~~@V.CYPHER*~~]/coded by:VICKY**------v1.1.3--\n')
-
 file = open('mpins.txt', 'r')
 
 MobileNumber = input('Enter Mobile Number: ').strip()
