@@ -9,7 +9,6 @@ d.app_start("com.f1soft.esewa")
 # Wait for the app to load
 d.wait_activity("com.f1soft.esewa.app.main.MainActivity", timeout=20)
 
-# Perform Automated Actions
 d(resourceId="com.f1soft.esewa:id/toolbar_login/register").click()
 
 print('\n--v1.1.3------**[~~Vcypherr~~]/coded by:VICKY**------v1.1.3--\n')
