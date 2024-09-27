@@ -1,7 +1,7 @@
 import uiautomator2 as u2
 
 # Connect to the device
-d = u2.connect(my_ip)
+d = u2.connect(49.126.111.83)
 
 # Launch the app
 d.app_start("com.f1soft.esewa")
