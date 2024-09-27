@@ -3,7 +3,24 @@ import uiautomator2 as u2
 # Connect to the device
 d = u2.connect(49.126.111.83)
 
-# Launch the app
+# Open the Android settings
+d.app_start("com.android.settings")
+
+# Wait for the Settings app to load
+d(text="Network & internet").click()  # Replace with "Connections" if needed for your device
+d(text="Hotspot & tethering").click()
+
+# Enable Bluetooth tethering
+d(text="Bluetooth tethering").click()
+
+# Check if Bluetooth tethering is toggled on, if not, toggle it
+if not d(resourceId="android:id/switchWidget").info['checked']:
+    d(resourceId="android:id/switchWidget").click()
+    print("Bluetooth tethering is enabled.")
+else:
+    print("Bluetooth tethering is already enabled.")
+
+# You can continue the rest of your automation process after this
 d.app_start("com.f1soft.esewa")
 
 # Wait for the app to load
