@@ -1,7 +1,7 @@
 import uiautomator2 as u2
 
 # Connect to the device
-d = u2.connect(49.126.111.83)
+d = u2.connect(192.168.10.169)
 
 # Open the Android settings
 d.app_start("com.android.settings")
